@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compression Ankle | Style Premium untuk Wanita Modern</title>
+    <title>Pelindung Ankle Premium | Style Elegan untuk Wanita Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
-        
-        :root {
-            --rose-gold: #D4AF37;
-            --cream: #F5F5DC;
-            --charcoal: #36454F;
-            --soft-pink: #F8E5E5;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#D4AF37',
+                        'cream': '#F5F5DC',
+                        'charcoal': '#36454F',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Montserrat"', 'sans-serif'],
+                    },
+                }
+            }
         }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--cream);
-            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
             scroll-behavior: smooth;
         }
         
@@ -29,37 +37,61 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,229,229,0.8) 100%);
-        }
-        
-        .price-badge {
-            background: linear-gradient(135deg, var(--rose-gold) 0%, #F5D0A9 100%);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-        
-        .testimonial-card {
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-        
-        .sticky-banner {
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(rgba(245, 245, 220, 0.9), rgba(245, 245, 220, 0.95)), 
+                        url('https://down-id.img.susercontent.com/file/id-11134207-7r98u-lxnoze1j9jf1eb.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         
         .fade-in {
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
         
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #F5F5DC 0%, #FFFFFF 100%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sticky-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-content {
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
         }
         
         .parallax {
@@ -69,326 +101,164 @@
             background-size: cover;
         }
         
-        .product-image {
-            transition: all 0.3s ease;
-        }
-        
-        .product-image:hover {
-            transform: scale(1.03);
-        }
-        
-        .countdown-item {
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .size-guide-modal {
-            transition: all 0.3s ease;
-        }
-        
-        .size-guide-modal.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        .color-option {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .color-option:hover, .color-option.active {
-            border-color: var(--rose-gold);
-        }
-        
         .gallery-item {
             transition: all 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             z-index: 10;
         }
     </style>
 </head>
-<body class="relative">
+<body class="bg-cream">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center">
-                <span class="text-2xl font-bold text-rose-gold" style="color: var(--rose-gold);">CompressionAnkle</span>
+                <span class="text-2xl font-serif font-bold text-rose-gold">Pelindung Ankle</span>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="#features" class="text-gray-700 hover:text-rose-gold transition">Keunggulan</a>
-                <a href="#gallery" class="text-gray-700 hover:text-rose-gold transition">Galeri</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-rose-gold transition">Testimoni</a>
-                <a href="#order" class="text-gray-700 hover:text-rose-gold transition">Pesan</a>
+                <a href="#features" class="text-charcoal hover:text-rose-gold transition">Keunggulan</a>
+                <a href="#gallery" class="text-charcoal hover:text-rose-gold transition">Galeri</a>
+                <a href="#testimonials" class="text-charcoal hover:text-rose-gold transition">Testimoni</a>
+                <a href="#size-guide" class="text-charcoal hover:text-rose-gold transition">Panduan Ukuran</a>
             </div>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 absolute w-full left-0 shadow-lg">
-            <a href="#features" class="block py-2 text-gray-700 hover:text-rose-gold transition">Keunggulan</a>
-            <a href="#gallery" class="block py-2 text-gray-700 hover:text-rose-gold transition">Galeri</a>
-            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-rose-gold transition">Testimoni</a>
-            <a href="#order" class="block py-2 text-gray-700 hover:text-rose-gold transition">Pesan</a>
+            <button class="md:hidden text-charcoal">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section py-16 md:py-24 relative overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--charcoal);">Tampil Percaya Diri dengan Style Premium yang Memukau</h1>
-                <p class="text-lg mb-8 text-gray-700">Compression Ankle terbaru dengan bahan premium dan desain trendi untuk penampilan sempurna setiap hari.</p>
-                
-                <div class="price-badge inline-block px-6 py-3 rounded-full mb-6">
-                    <div class="flex items-center">
-                        <span class="line-through text-gray-600 mr-3">Rp 298.500</span>
-                        <span class="text-2xl font-bold text-white">Rp 199.000</span>
-                    </div>
+    <section class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-4 py-20 text-center fade-in">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-charcoal mb-6">Tampil Percaya Diri dengan Style Premium yang Memukau</h1>
+            <p class="text-xl md:text-2xl text-charcoal mb-8 max-w-3xl mx-auto">Pelindung Ankle eksklusif untuk wanita Indonesia yang mengutamakan gaya dan kenyamanan.</p>
+            
+            <div class="bg-white bg-opacity-90 inline-block px-8 py-4 rounded-full shadow-lg mb-8 fade-in delay-1">
+                <div class="flex items-center justify-center space-x-4">
+                    <span class="line-through text-gray-500">Rp 298.500</span>
+                    <span class="text-2xl font-bold text-rose-gold">Rp 199.000</span>
                 </div>
-                
-                <div class="mb-8">
-                    <div class="flex items-center mb-2">
-                        <div class="w-4 h-4 rounded-full bg-rose-gold mr-2"></div>
-                        <span class="text-sm text-gray-600">🔥 FLASH SALE 24 JAM! Hanya untuk 50 Fashionista Pertama!</span>
-                    </div>
-                    
-                    <div class="flex items-center">
-                        <div class="w-4 h-4 rounded-full bg-rose-gold mr-2"></div>
-                        <span class="text-sm text-gray-600"><span id="view-counter">1800</span>+ sedang melihat produk ini</span>
-                    </div>
-                </div>
-                
-                <a href="https://rosa.orderonline.id/00-masteran-2" class="bg-rose-gold hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition">
-                    PESAN SEKARANG <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="text-sm text-gray-600 mt-1">Promo Hari Ini Saja!</div>
             </div>
             
-            <div class="md:w-1/2 fade-in" style="animation-delay: 0.3s;">
-                <div class="relative">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-lxnoze1j9jf1eb.webp" alt="Compression Ankle" class="w-full h-auto rounded-lg shadow-xl product-image">
-                    <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-full shadow-md">
-                        <span class="text-sm font-medium">#OOTDInspiration</span>
+            <div class="fade-in delay-2">
+                <div id="countdown" class="flex justify-center space-x-2 mb-8">
+                    <div class="bg-rose-gold text-white px-4 py-2 rounded-lg">
+                        <span id="hours" class="text-2xl font-bold">24</span>
+                        <span class="block text-xs">Jam</span>
+                    </div>
+                    <div class="bg-rose-gold text-white px-4 py-2 rounded-lg">
+                        <span id="minutes" class="text-2xl font-bold">59</span>
+                        <span class="block text-xs">Menit</span>
+                    </div>
+                    <div class="bg-rose-gold text-white px-4 py-2 rounded-lg">
+                        <span id="seconds" class="text-2xl font-bold">59</span>
+                        <span class="block text-xs">Detik</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Countdown Timer -->
-    <section class="py-8 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto text-center">
-                <h3 class="text-xl font-medium mb-4">⏰ Promo Berakhir Dalam:</h3>
-                <div class="flex justify-center space-x-4">
-                    <div class="countdown-item rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold" id="countdown-hours">24</div>
-                        <div class="text-xs">Jam</div>
-                    </div>
-                    <div class="countdown-item rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold" id="countdown-minutes">59</div>
-                        <div class="text-xs">Menit</div>
-                    </div>
-                    <div class="countdown-item rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold" id="countdown-seconds">59</div>
-                        <div class="text-xs">Detik</div>
-                    </div>
+                
+                <div class="mb-8 text-sm text-charcoal fade-in delay-3">
+                    <span class="font-semibold">🔥 FLASH SALE 24 JAM!</span> Hanya untuk 50 Fashionista Pertama!
                 </div>
+                
+                <a href="https://rosa.orderonline.id/00-masteran-2" class="bg-charcoal hover:bg-rose-gold text-white font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 inline-block">
+                    PESAN SEKARANG - Dapatkan Style Premium
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-50">
+    <section id="features" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Keunggulan Compression Ankle</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">Dirancang khusus untuk wanita Indonesia yang mengutamakan kenyamanan tanpa mengorbankan gaya.</p>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-charcoal mb-16">Keunggulan Pelindung Ankle Premium</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition fade-in" style="animation-delay: 0.1s;">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--soft-pink);">
-                        <i class="fas fa-star text-2xl" style="color: var(--rose-gold);"></i>
+                <div class="text-center p-6 rounded-lg bg-cream hover:bg-white transition-all duration-300 fade-in">
+                    <div class="w-20 h-20 bg-rose-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-rose-gold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Premium Quality Materials</h3>
+                    <h3 class="text-xl font-serif font-semibold mb-2">Premium Quality Materials</h3>
                     <p class="text-gray-600">Bahan berkualitas tinggi yang nyaman dan tahan lama, memberikan sentuhan mewah setiap kali dipakai.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition fade-in" style="animation-delay: 0.2s;">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--soft-pink);">
-                        <i class="fas fa-tshirt text-2xl" style="color: var(--rose-gold);"></i>
+                <div class="text-center p-6 rounded-lg bg-cream hover:bg-white transition-all duration-300 fade-in delay-1">
+                    <div class="w-20 h-20 bg-rose-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-fire text-rose-gold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Trendy Indonesian Fashion</h3>
+                    <h3 class="text-xl font-serif font-semibold mb-2">Trendy Indonesian Fashion</h3>
                     <p class="text-gray-600">Desain mengikuti tren fashion terkini yang disesuaikan dengan selera wanita Indonesia modern.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition fade-in" style="animation-delay: 0.3s;">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--soft-pink);">
-                        <i class="fas fa-heart text-2xl" style="color: var(--rose-gold);"></i>
+                <div class="text-center p-6 rounded-lg bg-cream hover:bg-white transition-all duration-300 fade-in delay-2">
+                    <div class="w-20 h-20 bg-rose-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-rose-gold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Perfect Fit & Comfort</h3>
-                    <p class="text-gray-600">Cutting sempurna yang mengikuti lekuk tubuh dengan nyaman, memberikan kebebasan bergerak.</p>
+                    <h3 class="text-xl font-serif font-semibold mb-2">Perfect Fit & Comfort</h3>
+                    <p class="text-gray-600">Cutting sempurna yang mengikuti lekuk tubuh dengan nyaman, cocok untuk berbagai bentuk tubuh.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition fade-in" style="animation-delay: 0.4s;">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--soft-pink);">
-                        <i class="fas fa-camera text-2xl" style="color: var(--rose-gold);"></i>
+                <div class="text-center p-6 rounded-lg bg-cream hover:bg-white transition-all duration-300 fade-in delay-3">
+                    <div class="w-20 h-20 bg-rose-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-camera text-rose-gold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Instagram-Perfect Style</h3>
-                    <p class="text-gray-600">Tampilan yang sempurna untuk OOTD dan acara special, membuat Anda selalu siap untuk difoto.</p>
+                    <h3 class="text-xl font-serif font-semibold mb-2">Instagram-Perfect Style</h3>
+                    <p class="text-gray-600">Tampilan yang sempurna untuk OOTD dan acara special, membuat Anda selalu fotogenik.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-16">
+    <section id="gallery" class="py-20 bg-cream">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Galeri Inspirasi</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">Lihat bagaimana Compression Ankle bisa menyempurnakan penampilan harian Anda.</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-charcoal mb-16">Inspirasi Gaya dengan Pelindung Ankle</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-lxnoze1jgk9978.webp" alt="Pelindung Ankle Style 1" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lxnoze1jaxzh2f.webp" alt="Pelindung Ankle Style 2" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lxnoze1jccjx0c.webp" alt="Pelindung Ankle Style 3" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98y-lxnoze1jhytpe6.webp" alt="Pelindung Ankle Style 4" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lxnoze1jjde583.webp" alt="Pelindung Ankle Style 5" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r990-lxnoze1jdr4d17.webp" alt="Pelindung Ankle Style 6" class="w-full h-80 object-cover transition duration-300 hover:scale-105">
+                </div>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-lxnoze1jgk9978.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lxnoze1jaxzh2f.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lxnoze1jccjx0c.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98y-lxnoze1jhytpe6.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lxnoze1jjde583.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r990-lxnoze1jdr4d17.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-lxnoze1jf5ot42.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item overflow-hidden rounded-lg">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lxnoze1jkryl60.webp" alt="Compression Ankle" class="w-full h-full object-cover">
-                </div>
+            <div class="text-center mt-12">
+                <a href="#order" class="inline-block bg-rose-gold hover:bg-charcoal text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Lihat Warna Lainnya
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Color Variations -->
-    <section class="py-16 bg-gray-50">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pilihan Warna</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">Tersedia dalam berbagai warna yang bisa disesuaikan dengan gaya Anda.</p>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="color-option rounded-full w-16 h-16 cursor-pointer active" style="background-color: #000000;" data-color="black"></div>
-                <div class="color-option rounded-full w-16 h-16 cursor-pointer" style="background-color: #964B00;" data-color="brown"></div>
-                <div class="color-option rounded-full w-16 h-16 cursor-pointer" style="background-color: #808080;" data-color="gray"></div>
-                <div class="color-option rounded-full w-16 h-16 cursor-pointer" style="background-color: #FFFFFF; border: 1px solid #eee;" data-color="white"></div>
-                <div class="color-option rounded-full w-16 h-16 cursor-pointer" style="background-color: #800000;" data-color="maroon"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Size Guide -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Panduan Ukuran</h2>
-                <p class="text-gray-600 mb-8">Pastikan Anda memilih ukuran yang tepat untuk kenyamanan maksimal.</p>
-                <button id="size-guide-btn" class="bg-rose-gold hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition">
-                    Lihat Panduan Ukuran <i class="fas fa-ruler ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Size Guide Modal -->
-    <div id="size-guide-modal" class="size-guide-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 pointer-events-none transition">
-        <div class="bg-white rounded-xl max-w-2xl w-full mx-4 p-8 relative max-h-[90vh] overflow-y-auto">
-            <button id="close-size-guide" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <h3 class="text-2xl font-bold mb-6">Panduan Ukuran Compression Ankle</h3>
-            
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b">
-                            <th class="pb-2">Ukuran</th>
-                            <th class="pb-2">Panjang (cm)</th>
-                            <th class="pb-2">Lebar (cm)</th>
-                            <th class="pb-2">Rekomendasi Tinggi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="py-3">S</td>
-                            <td>50</td>
-                            <td>40</td>
-                            <td>150-160 cm</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-3">M</td>
-                            <td>53</td>
-                            <td>43</td>
-                            <td>160-170 cm</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-3">L</td>
-                            <td>56</td>
-                            <td>46</td>
-                            <td>170-180 cm</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">XL</td>
-                            <td>59</td>
-                            <td>49</td>
-                            <td>180 cm+</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="mt-8">
-                <h4 class="font-bold mb-2">Tips Memilih Ukuran:</h4>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Ukur lingkar pinggang dan pinggul Anda sebelum memesan</li>
-                    <li>Jika berada di antara dua ukuran, pilih ukuran yang lebih besar</li>
-                    <li>Untuk look yang lebih ketat, pilih ukuran biasa</li>
-                    <li>Untuk look yang lebih relaxed, pilih satu ukuran lebih besar</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Apa Kata Mereka?</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">Testimoni nyata dari fashionista yang sudah mencoba Compression Ankle.</p>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-charcoal mb-16">Apa Kata Mereka?</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="testimonial-card p-6 rounded-lg fade-in" style="animation-delay: 0.1s;">
+                <div class="testimonial-card p-6 rounded-lg fade-in">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sinta R." class="w-full h-full object-cover">
+                        <div class="w-12 h-12 rounded-full bg-rose-gold bg-opacity-20 flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-rose-gold"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Sinta R., Jakarta</h4>
+                            <h4 class="font-semibold">Sinta R.</h4>
                             <div class="flex text-yellow-400">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -398,16 +268,17 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600">"Bahannya premium banget! Nyaman dipakai seharian dan modelnya bikin pede. Worth it!"</p>
+                    <p class="text-gray-600 italic">"Bahannya premium banget! Nyaman dipakai seharian dan modelnya bikin pede. Worth it!"</p>
+                    <div class="mt-3 text-sm text-gray-500">Jakarta</div>
                 </div>
                 
-                <div class="testimonial-card p-6 rounded-lg fade-in" style="animation-delay: 0.2s;">
+                <div class="testimonial-card p-6 rounded-lg fade-in delay-1">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maya D." class="w-full h-full object-cover">
+                        <div class="w-12 h-12 rounded-full bg-rose-gold bg-opacity-20 flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-rose-gold"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Maya D., Surabaya</h4>
+                            <h4 class="font-semibold">Maya D.</h4>
                             <div class="flex text-yellow-400">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -417,16 +288,17 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600">"Kualitas jahitan rapi, bahan tidak mudah kusut. Cocok untuk acara formal maupun casual."</p>
+                    <p class="text-gray-600 italic">"Kualitas jahitan rapi, bahan tidak mudah kusut. Cocok untuk acara formal maupun casual."</p>
+                    <div class="mt-3 text-sm text-gray-500">Surabaya</div>
                 </div>
                 
-                <div class="testimonial-card p-6 rounded-lg fade-in" style="animation-delay: 0.3s;">
+                <div class="testimonial-card p-6 rounded-lg fade-in delay-2">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Lina S." class="w-full h-full object-cover">
+                        <div class="w-12 h-12 rounded-full bg-rose-gold bg-opacity-20 flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-rose-gold"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Lina S., Bandung</h4>
+                            <h4 class="font-semibold">Lina S.</h4>
                             <div class="flex text-yellow-400">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -436,16 +308,17 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600">"Ukurannya pas banget! Design-nya timeless, bisa dipake bertahun-tahun."</p>
+                    <p class="text-gray-600 italic">"Ukurannya pas banget! Design-nya timeless, bisa dipake bertahun-tahun."</p>
+                    <div class="mt-3 text-sm text-gray-500">Bandung</div>
                 </div>
                 
-                <div class="testimonial-card p-6 rounded-lg fade-in" style="animation-delay: 0.4s;">
+                <div class="testimonial-card p-6 rounded-lg fade-in delay-3">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Rika W." class="w-full h-full object-cover">
+                        <div class="w-12 h-12 rounded-full bg-rose-gold bg-opacity-20 flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-rose-gold"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Rika W., Medan</h4>
+                            <h4 class="font-semibold">Rika W.</h4>
                             <div class="flex text-yellow-400">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -455,64 +328,64 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600">"Packagingnya bagus, bahan sesuai ekspektasi. Pasti order warna lain!"</p>
+                    <p class="text-gray-600 italic">"Packagingnya bagus, bahan sesuai ekspektasi. Pasti order warna lain!"</p>
+                    <div class="mt-3 text-sm text-gray-500">Medan</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Order Section -->
-    <section id="order" class="py-16">
+    <!-- Size Guide Section -->
+    <section id="size-guide" class="py-20 bg-cream">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden fade-in">
-                <div class="md:flex">
-                    <div class="md:w-1/2">
-                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-lxnoze1j9jf1eb.webp" alt="Compression Ankle" class="w-full h-full object-cover">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-charcoal mb-16">Panduan Ukuran</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-xl font-serif font-semibold mb-4 text-rose-gold">Tabel Ukuran</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="py-2 text-left">Ukuran</th>
+                                        <th class="py-2 text-left">Lingkar Kaki (cm)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-3">S</td>
+                                        <td class="py-3">20-22</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-3">M</td>
+                                        <td class="py-3">22-24</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-3">L</td>
+                                        <td class="py-3">24-26</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">XL</td>
+                                        <td class="py-3">26-28</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="p-8 md:w-1/2">
-                        <h2 class="text-2xl font-bold mb-4">Compression Ankle</h2>
-                        <p class="text-gray-600 mb-6">Tampil percaya diri dengan style premium yang memukau setiap hari.</p>
-                        
-                        <div class="mb-6">
-                            <div class="flex items-center">
-                                <span class="line-through text-gray-600 mr-3 text-lg">Rp 298.500</span>
-                                <span class="text-2xl font-bold" style="color: var(--rose-gold);">Rp 199.000</span>
-                            </div>
-                            <div class="text-sm text-gray-500 mt-1">Hemat Rp 99.500 (33%)</div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-bold mb-2">Warna:</h4>
-                            <div class="flex space-x-2">
-                                <button class="px-4 py-2 border rounded-full text-sm bg-black text-white">Hitam</button>
-                                <button class="px-4 py-2 border rounded-full text-sm">Coklat</button>
-                                <button class="px-4 py-2 border rounded-full text-sm">Abu-abu</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-bold mb-2">Ukuran:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <button class="px-4 py-2 border rounded-full text-sm">S</button>
-                                <button class="px-4 py-2 border rounded-full text-sm bg-rose-gold text-white">M</button>
-                                <button class="px-4 py-2 border rounded-full text-sm">L</button>
-                                <button class="px-4 py-2 border rounded-full text-sm">XL</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span>Stok tersisa: <span class="font-bold">27</span> dari 50 pcs</span>
-                            </div>
-                        </div>
-                        
-                        <a href="https://rosa.orderonline.id/00-masteran-2" class="block w-full bg-rose-gold hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-center transition">
-                            PESAN SEKARANG - Dapatkan Style Premium
-                        </a>
-                        
-                        <div class="mt-4 text-center text-sm text-gray-500">
-                            <i class="fas fa-lock mr-1"></i> Pembayaran aman melalui sistem terenkripsi
+                    <div class="bg-rose-gold bg-opacity-10 p-8 flex flex-col justify-center">
+                        <h3 class="text-xl font-serif font-semibold mb-4 text-rose-gold">Cara Mengukur</h3>
+                        <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+                            <li>Siapkan pita pengukur</li>
+                            <li>Ukur lingkar bagian terlebar dari pergelangan kaki</li>
+                            <li>Pastikan pita tidak terlalu ketat atau longgar</li>
+                            <li>Catat hasil pengukuran dalam centimeter</li>
+                            <li>Pilih ukuran sesuai tabel</li>
+                        </ol>
+                        <div class="mt-6">
+                            <button id="sizeGuideBtn" class="text-rose-gold font-semibold flex items-center">
+                                <i class="fas fa-ruler mr-2"></i> Butuh Bantuan Mengukur?
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -520,231 +393,157 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Pertanyaan yang Sering Diajukan</h2>
+    <!-- CTA Section -->
+    <section class="py-20 bg-charcoal text-white parallax" style="background-image: url('https://down-id.img.susercontent.com/file/id-11134207-7r98t-lxnoze1jkryl60.webp');">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 fade-in">Siap Memiliki Pelindung Ankle Premium?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto fade-in delay-1">Bergabunglah dengan ribuan wanita Indonesia yang telah mempercayakan gaya mereka pada produk kami.</p>
+            
+            <div class="fade-in delay-2">
+                <div class="bg-white bg-opacity-20 inline-block px-8 py-4 rounded-full backdrop-blur-sm mb-8">
+                    <div class="flex items-center justify-center space-x-4">
+                        <span class="line-through text-gray-300">Rp 298.500</span>
+                        <span class="text-2xl font-bold text-white">Rp 199.000</span>
+                    </div>
+                </div>
                 
-                <div class="space-y-4">
-                    <div class="border-b pb-4">
-                        <button class="faq-toggle flex justify-between items-center w-full text-left">
-                            <h3 class="font-medium">Bagaimana cara menentukan ukuran yang tepat?</h3>
-                            <i class="fas fa-plus ml-4"></i>
-                        </button>
-                        <div class="faq-content mt-2 text-gray-600 hidden">
-                            <p>Kami menyediakan panduan ukuran lengkap di halaman ini. Ukur lingkar pinggang dan pinggul Anda, lalu cocokkan dengan tabel ukuran kami. Jika berada di antara dua ukuran, kami sarankan memilih ukuran yang lebih besar untuk kenyamanan maksimal.</p>
+                <div class="mb-8">
+                    <div class="flex items-center justify-center space-x-4 text-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span><span id="viewCounter">2100</span>+ sedang melihat</span>
                         </div>
-                    </div>
-                    
-                    <div class="border-b pb-4">
-                        <button class="faq-toggle flex justify-between items-center w-full text-left">
-                            <h3 class="font-medium">Berapa lama waktu pengiriman?</h3>
-                            <i class="fas fa-plus ml-4"></i>
-                        </button>
-                        <div class="faq-content mt-2 text-gray-600 hidden">
-                            <p>Biasanya pesanan diproses dalam 1-2 hari kerja dan dikirim via ekspedisi terpercaya. Estimasi pengiriman untuk Jabodetabek 2-3 hari kerja, luar Jabodetabek 3-7 hari kerja tergantung lokasi.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="border-b pb-4">
-                        <button class="faq-toggle flex justify-between items-center w-full text-left">
-                            <h3 class="font-medium">Apakah bisa retur atau tukar ukuran?</h3>
-                            <i class="fas fa-plus ml-4"></i>
-                        </button>
-                        <div class="faq-content mt-2 text-gray-600 hidden">
-                            <p>Kami menerima retur dalam kondisi produk belum dipakai/dicuci, tag masih terpasang, dan dalam waktu 3 hari setelah barang diterima. Biaya pengembalian ditanggung pembeli. Untuk penukaran ukuran, silakan hubungi CS kami.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="border-b pb-4">
-                        <button class="faq-toggle flex justify-between items-center w-full text-left">
-                            <h3 class="font-medium">Bagaimana perawatan Compression Ankle?</h3>
-                            <i class="fas fa-plus ml-4"></i>
-                        </button>
-                        <div class="faq-content mt-2 text-gray-600 hidden">
-                            <p>Kami sarankan mencuci dengan tangan menggunakan deterjen lembut, tidak menggunakan pemutih, dan diangin-anginkan. Hindari mesin cuci dan pengering untuk menjaga kualitas bahan.</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-box-open mr-2"></i>
+                            <span><span id="stockCounter">27</span> stok tersisa</span>
                         </div>
                     </div>
                 </div>
+                
+                <a href="https://rosa.orderonline.id/00-masteran-2" class="bg-rose-gold hover:bg-white hover:text-charcoal text-white font-bold py-4 px-12 rounded-full transition duration-300 inline-block">
+                    PESAN SEKARANG <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Sticky Order Banner -->
-    <div class="sticky-banner fixed bottom-0 left-0 w-full bg-white py-3 px-4 z-40 transform translate-y-0 transition">
+    <div class="sticky-banner bg-white py-3 px-4 border-t border-gray-200">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-2 md:mb-0">
-                <div class="flex items-center">
-                    <span class="line-through text-gray-600 mr-3">Rp 298.500</span>
-                    <span class="text-xl font-bold" style="color: var(--rose-gold);">Rp 199.000</span>
+            <div class="flex items-center mb-2 md:mb-0">
+                <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-lxnoze1jf5ot42.webp" alt="Pelindung Ankle" class="w-12 h-12 rounded-full object-cover mr-3">
+                <div>
+                    <h4 class="font-semibold">Pelindung Ankle Premium</h4>
+                    <div class="flex items-center">
+                        <span class="line-through text-gray-500 text-sm mr-2">Rp 298.500</span>
+                        <span class="text-rose-gold font-bold">Rp 199.000</span>
+                    </div>
                 </div>
-                <div class="text-sm text-gray-600">🔥 Hanya untuk 50 fashionista pertama!</div>
             </div>
-            <a href="https://rosa.orderonline.id/00-masteran-2" class="bg-rose-gold hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full whitespace-nowrap transition">
-                PESAN SEKARANG <i class="fas fa-arrow-right ml-1"></i>
+            <a href="https://rosa.orderonline.id/00-masteran-2" class="bg-rose-gold hover:bg-charcoal text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300 w-full md:w-auto text-center">
+                Beli Sekarang
             </a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-12 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">CompressionAnkle</h3>
-                    <p class="text-gray-400">Brand fashion premium untuk wanita Indonesia yang ingin tampil percaya diri dengan gaya elegan dan nyaman.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Keunggulan</a></li>
-                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galeri</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
-                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Pesan Sekarang</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Bantuan</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Panduan Ukuran</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Kebijakan Pengembalian</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Metode Pembayaran</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Hubungi Kami</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">cs@compressionankle.id</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">+62 812-3456-7890</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-instagram mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">@compressionankle.id</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
-                <p>&copy; 2023 CompressionAnkle. All rights reserved.</p>
-            </div>
+    <!-- Size Guide Modal -->
+    <div id="sizeGuideModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 pointer-events-none transition">
+        <div class="modal-content bg-white rounded-lg max-w-md w-full mx-4 p-6 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-rose-gold">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-xl font-serif font-semibold mb-4 text-rose-gold">Panduan Mengukur</h3>
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98y-lxnoze1jhytpe6.webp" alt="Cara Mengukur" class="w-full h-auto mb-4 rounded">
+            <p class="text-gray-600 mb-4">Untuk hasil yang akurat, ikuti langkah-langkah berikut:</p>
+            <ol class="list-decimal pl-5 space-y-2 mb-4">
+                <li>Berdiri tegak dengan kaki rata di lantai</li>
+                <li>Gunakan pita pengukur yang fleksibel</li>
+                <li>Ukur lingkar pergelangan kaki pada bagian yang ingin dipasang pelindung</li>
+                <li>Pastikan pita tidak terlalu ketat atau terlalu longgar</li>
+                <li>Catat ukuran dalam centimeter</li>
+            </ol>
+            <p class="text-sm text-gray-500">Jika ragu, pilih ukuran yang lebih besar untuk kenyamanan maksimal.</p>
         </div>
-    </footer>
+    </div>
 
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
         // Countdown Timer
         function updateCountdown() {
             const now = new Date();
-            const endOfDay = new Date();
-            endOfDay.setHours(23, 59, 59, 999);
+            const endTime = new Date();
+            endTime.setHours(now.getHours() + 24);
             
-            const diff = endOfDay - now;
+            const diff = endTime - now;
             
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
             
-            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
         
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
+        
         // Random View Counter
         function updateViewCounter() {
             const views = Math.floor(Math.random() * (2500 - 1800 + 1)) + 1800;
-            document.getElementById('view-counter').textContent = views.toLocaleString();
+            document.getElementById('viewCounter').textContent = views;
+            
+            // Decrease stock randomly but not below 1
+            const stockElement = document.getElementById('stockCounter');
+            let stock = parseInt(stockElement.textContent);
+            if (stock > 1) {
+                stock -= Math.floor(Math.random() * 3);
+                if (stock < 1) stock = 1;
+                stockElement.textContent = stock;
+            }
         }
         
-        setInterval(updateViewCounter, 3000);
+        setInterval(updateViewCounter, 5000);
         updateViewCounter();
-
+        
         // Size Guide Modal
-        const sizeGuideBtn = document.getElementById('size-guide-btn');
-        const sizeGuideModal = document.getElementById('size-guide-modal');
-        const closeSizeGuide = document.getElementById('close-size-guide');
+        const sizeGuideBtn = document.getElementById('sizeGuideBtn');
+        const sizeGuideModal = document.getElementById('sizeGuideModal');
+        const closeModal = document.getElementById('closeModal');
         
-        sizeGuideBtn.addEventListener('click', function() {
+        sizeGuideBtn.addEventListener('click', () => {
             sizeGuideModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
         
-        closeSizeGuide.addEventListener('click', function() {
+        closeModal.addEventListener('click', () => {
             sizeGuideModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
         });
-
-        // Color Options
-        const colorOptions = document.querySelectorAll('.color-option');
         
-        colorOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                colorOptions.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
-            });
+        // Close modal when clicking outside
+        sizeGuideModal.addEventListener('click', (e) => {
+            if (e.target === sizeGuideModal) {
+                sizeGuideModal.classList.remove('active');
+            }
         });
-
-        // FAQ Toggle
-        const faqToggles = document.querySelectorAll('.faq-toggle');
         
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('i');
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
                 
-                content.classList.toggle('hidden');
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                if (content.classList.contains('hidden')) {
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                } else {
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
-
-        // Sticky Banner Show/Hide on Scroll
-        let lastScroll = 0;
-        const stickyBanner = document.querySelector('.sticky-banner');
         
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                stickyBanner.classList.remove('hidden');
-                return;
-            }
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scroll down
-                stickyBanner.classList.add('hidden');
-            } else if (currentScroll < lastScroll) {
-                // Scroll up
-                stickyBanner.classList.remove('hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Fade-in Animation on Scroll
+        // Fade in elements on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
         
         function checkFade() {
